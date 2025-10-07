@@ -12,7 +12,7 @@ A Flutter application for barcode scanning.
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/HKAY1/qrBarCodeTestApp.git
    cd barcode_test_app
    ```
 

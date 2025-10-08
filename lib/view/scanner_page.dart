@@ -1,3 +1,4 @@
+import 'package:barcode_test_app/view/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
@@ -39,17 +40,12 @@ class _ScannerPageState extends State<ScannerPage> {
 
               await Future.delayed(const Duration(milliseconds: 500));
               if (code == 'login123' && mounted) {
-                Navigator.pushReplacementNamed(
+                Navigator.pushReplacement(
                   context,
-                  '/dashboard',
-                  arguments: code,
+                  MaterialPageRoute(builder: (_) => DashboardPage(code: code)),
                 );
               } else if (mounted) {
-                Navigator.pushReplacementNamed(
-                  context,
-                  '/home',
-                  arguments: 'Invalid scan!',
-                );
+                Navigator.pop(context, 'inalid');
               }
 
               setState(() => _isProcessing = false);
